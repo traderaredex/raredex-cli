@@ -4,7 +4,7 @@ from decimal import Decimal
 from unittest.mock import AsyncMock, MagicMock, mock_open, patch, ANY
 
 import pytest
-from paradex_cli import (
+from raredex_cli import (
     _change_guardian,
     _change_guardian_backup,
     _change_signer,
@@ -24,11 +24,11 @@ runner = CliRunner()
 
 @pytest.fixture(scope="function")
 def setup_env_vars():
-    os.environ["PARADEX_ACCOUNT_ADDRESS"] = "0x123"
-    os.environ["PARADEX_ACCOUNT_KEY"] = "0x456"
+    os.environ["RAREDEX_ACCOUNT_ADDRESS"] = "0x123"
+    os.environ["RAREDEX_ACCOUNT_KEY"] = "0x456"
     yield
-    os.environ.pop("PARADEX_ACCOUNT_ADDRESS")
-    os.environ.pop("PARADEX_ACCOUNT_KEY")
+    os.environ.pop("RAREDEX_ACCOUNT_ADDRESS")
+    os.environ.pop("RAREDEX_ACCOUNT_KEY")
 
 
 @pytest.fixture(scope="function")
@@ -49,7 +49,7 @@ async def test_load_contract_from_account(mock_account):
     mock_address = "0x123"
     mock_contract = AsyncMock()
     with patch(
-        "paradex_cli.main.Contract.from_address",
+        "raredex_cli.main.Contract.from_address",
         new_callable=AsyncMock,
         return_value=mock_contract,
     ) as mock_from_address:
@@ -71,9 +71,9 @@ async def test_change_guardian(mock_account, setup_env_vars):
     }
     mock_pub_key = "0x789"
     with (
-        patch("paradex_cli.main.load_contract_from_account", return_value=mock_contract),
-        patch("paradex_cli.main.random_max_fee", return_value=1),
-        patch("paradex_cli.main._process_invoke", new_callable=AsyncMock),
+        patch("raredex_cli.main.load_contract_from_account", return_value=mock_contract),
+        patch("raredex_cli.main.random_max_fee", return_value=1),
+        patch("raredex_cli.main._process_invoke", new_callable=AsyncMock),
     ):
         await _change_guardian(mock_account.starknet, mock_contract, mock_pub_key)
         mock_contract.functions["changeGuardian"].prepare_invoke_v1.assert_called_once()
@@ -90,9 +90,9 @@ async def test_change_guardian_backup(mock_account, setup_env_vars):
     }
     mock_pub_key = "0x789"
     with (
-        patch("paradex_cli.main.load_contract_from_account", return_value=mock_contract),
-        patch("paradex_cli.main.random_max_fee", return_value=1),
-        patch("paradex_cli.main._process_invoke", new_callable=AsyncMock),
+        patch("raredex_cli.main.load_contract_from_account", return_value=mock_contract),
+        patch("raredex_cli.main.random_max_fee", return_value=1),
+        patch("raredex_cli.main._process_invoke", new_callable=AsyncMock),
     ):
         await _change_guardian_backup(mock_account.starknet, mock_contract, mock_pub_key)
         mock_contract.functions["changeGuardianBackup"].prepare_invoke_v1.assert_called_once()
