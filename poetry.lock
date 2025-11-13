@@ -1878,15 +1878,15 @@ files = [
 ]
 
 [[package]]
-name = "paradex-py"
+name = "raredex-py"
 version = "0.4.4"
-description = "Paradex Python SDK"
+description = "Raredex Python SDK"
 optional = false
 python-versions = "<3.13,>=3.9"
 groups = ["main"]
 files = [
-    {file = "paradex_py-0.4.4-py3-none-any.whl", hash = "sha256:0f57ee72bff6b36d5e4dcd3a066e6f5fcb21e2a83f08dad9cf8905d03d752e6e"},
-    {file = "paradex_py-0.4.4.tar.gz", hash = "sha256:2c51a68b7a1fd26f4de6d68062dac46f01531c4869673e8306299f778c13f282"},
+    {file = "raredex_py-0.4.4-py3-none-any.whl", hash = "sha256:0f57ee72bff6b36d5e4dcd3a066e6f5fcb21e2a83f08dad9cf8905d03d752e6e"},
+    {file = "raredex_py-0.4.4.tar.gz", hash = "sha256:2c51a68b7a1fd26f4de6d68062dac46f01531c4869673e8306299f778c13f282"},
 ]
 
 [package.dependencies]
