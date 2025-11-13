@@ -1,9 +1,9 @@
-# Paradex CLI
+# Raredex CLI
 
-[![PyPI version](https://badge.fury.io/py/paradex_cli.svg)](https://badge.fury.io/py/paradex_cli)
+[![PyPI version](https://badge.fury.io/py/paradex_cli.svg)](https://badge.fury.io/py/raredex_cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Paradex CLI is a command-line interface (CLI) for managing account contract setups,
+Raredex CLI is a command-line interface (CLI) for managing account contract setups,
 including printing account info, adding guardians, changing signers, and more.
 
 ## Installation
@@ -11,13 +11,13 @@ including printing account info, adding guardians, changing signers, and more.
 You can install the package via pip:
 
 ```sh
-pip install paradex_cli
+pip install raredex_cli
 ```
 
 Or using Poetry:
 
 ```sh
-poetry add paradex_cli
+poetry add raredex_cli
 ```
 
 ## Commands
@@ -25,43 +25,43 @@ poetry add paradex_cli
 ### Print Account Info
 
 ```sh
-paradex_cli print-account-info ACCOUNT_ADDRESS --env ENVIRONMENT
+raredex_cli print-account-info ACCOUNT_ADDRESS --env ENVIRONMENT
 ```
 
 ### Add Guardian
 
 ```sh
-paradex_cli add-guardian PUB_KEY --env ENVIRONMENT
+raredex_cli add-guardian PUB_KEY --env ENVIRONMENT
 ```
 
 ### Add Guardian Backup
 
 ```sh
-paradex_cli add-guardian-backup PUB_KEY --env ENVIRONMENT
+raredex_cli add-guardian-backup PUB_KEY --env ENVIRONMENT
 ```
 
 ### Change Signer
 
 ```sh
-paradex_cli change-signer PUB_KEY --env ENVIRONMENT
+raredex_cli change-signer PUB_KEY --env ENVIRONMENT
 ```
 
 ### Sign Invoke Transaction
 
 ```sh
-paradex_cli sign-invoke-tx FILE_PATH --env ENVIRONMENT
+raredex_cli sign-invoke-tx FILE_PATH --env ENVIRONMENT
 ```
 
 ### Submit Invoke Transaction
 
 ```sh
-paradex_cli submit-invoke-tx TX_FILE_PATH SIG_FILES --env ENVIRONMENT
+raredex_cli submit-invoke-tx TX_FILE_PATH SIG_FILES --env ENVIRONMENT
 ```
 
 ### Trigger Escape Guardian
 
 ```
-paradex_cli trigger-escape-guardian --env ENVIRONMENT
+raredex_cli trigger-escape-guardian --env ENVIRONMENT
 ```
 
 ## Development
@@ -71,8 +71,8 @@ To contribute to this project, follow these steps:
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/tradeparadex/paradex_cli.git
-cd paradex_cli
+git clone https://github.com/traderaredex/raredex_cli.git
+cd raredex_cli
 ```
 
 ### 2. Install Dependencies
