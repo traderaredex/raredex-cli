@@ -10,9 +10,9 @@ from typing import Callable, Optional, Union
 import marshmallow_dataclass
 import typer
 from Crypto.Random import get_random_bytes
-from paradex_py.account.starknet import Account as StarknetAccount
-from paradex_py.paradex import Paradex, ParadexAccount
-from paradex_py.utils import random_max_fee
+from raredex_py.account.starknet import Account as StarknetAccount
+from raredex_py.paradex import Raredex, RaredexAccount
+from raredex_py.utils import random_max_fee
 from starknet_py.cairo.felt import decode_shortstring
 from starknet_py.contract import Contract
 from starknet_py.net.signer.stark_curve_signer import KeyPair
